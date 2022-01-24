@@ -1,13 +1,18 @@
 function isPalindrome(word) {
-  // Write your algorithm here
+ 
+  let wordArray = word.split('')
+  return wordArray.every((letter, i, wordArray) => letter === wordArray[wordArray.length - i - 1])
 }
+
+
+
 
 /* 
   Add your pseudocode here
 */
 
 /*
-  Add written explanation of your solution here
+ Split word into array to check indexes, use every to check that every index matches its opposite index
 */
 
 // You can run `node index.js` to view these console logs
@@ -20,6 +25,9 @@ if (require.main === module) {
 
   console.log("Expecting: false");
   console.log("=>", isPalindrome("robot"));
+
+  console.log("Expecting: false");
+  console.log("=>", isPalindrome("jackaj"));
 }
 
 module.exports = isPalindrome;
